@@ -1,0 +1,10 @@
+/* style sheet for calculator */
+body {
+    background-color: blanchedalmond;
+}
+
+
+.button-panel {
+    height: 500px;
+    width: 400px;
+}
