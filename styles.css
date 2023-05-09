@@ -3,8 +3,22 @@ body {
     background-color: blanchedalmond;
 }
 
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 
 .button-panel {
+    
     height: 500px;
+    width: 400px;
+}
+
+.display-box {
+    display: flex;
+    justify-content: center;
+    background-color: white;
     width: 400px;
 }
