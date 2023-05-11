@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator!</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <div class="container">
@@ -14,10 +15,10 @@
         </div>
         <div class="button-panel">
             <div class="row1">
-                <button class="number">7</button>
-                <button class="number">8</button>
+                <button class="number" id="v7" value="7">7</button>
+                <button class="number" id="v8" value="8">8</button>
                 <button class="number">9</button>
-                <button class="other">/</button>
+                <button class="number">/</button>
                 <button class="other"></button>
             </div>
 
@@ -25,7 +26,7 @@
                 <button class="number">4</button>
                 <button class="number">5</button>
                 <button class="number">6</button>
-                <button class="other">X</button>
+                <button class="number">X</button>
                 <button class="other"></button>
                 
             </div>
@@ -34,7 +35,7 @@
                 <button class="number">1</button>
                 <button class="number">2</button>
                 <button class="number">3</button>
-                <button class="other">-</button>
+                <button class="number">-</button>
                 <button class="other"></button>
             </div>
 
@@ -42,8 +43,8 @@
                 <button class="number">0</button>
                 <button class="other">C</button>
                 <button class="other">.</button>
-                <button class="other">+</button>
-                <button class="other">=</button>
+                <button class="number">+</button>
+                <button class="number">=</button>
             </div>
         </div>
     </div>
