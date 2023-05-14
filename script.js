@@ -15,9 +15,22 @@ let operator = ''
 const numberButtons = document.querySelectorAll('.number')
 numberButtons.forEach(number => {
     number.addEventListener('click', () => {
-        num1 = number.innerHTML;
+        num1 += number.innerHTML
+
+        // IDEA: create a string, split the string at the operator,
+        // set the variables to the correct pieces
+        // statement += number.innerHTML;
+        // console.log(num1)
         console.log(num1)
+        console.log(operator)
     });
+});
+
+const operateButtons = document.querySelectorAll('.operate')
+operateButtons.forEach(item => {
+    item.addEventListener('click', () => {
+        operator = item.innerHTML
+    })
 })
 //operate function
 // once two numbers areinputed and produce a result, set num1 
