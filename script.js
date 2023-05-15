@@ -6,8 +6,8 @@
 //     num2: 0,
 // };
 
-let num1 = 0
-let num2 = 0
+let num1 = ''
+let num2 = ''
 let operator = ''
 
 
@@ -15,14 +15,19 @@ let operator = ''
 const numberButtons = document.querySelectorAll('.number')
 numberButtons.forEach(number => {
     number.addEventListener('click', () => {
-        num1 += number.innerHTML
+        // put in a check to see if operator exists yet
+        // if it does, set num2 up
+        if (operator === '') {
+            num1 += number.innerHTML;
+        }
+        else {
+            num2 += number.innerHTML;
+        }
 
         // IDEA: create a string, split the string at the operator,
         // set the variables to the correct pieces
-        // statement += number.innerHTML;
-        // console.log(num1)
         console.log(num1)
-        console.log(operator)
+        console.log(num2)
     });
 });
 
@@ -30,13 +35,31 @@ const operateButtons = document.querySelectorAll('.operate')
 operateButtons.forEach(item => {
     item.addEventListener('click', () => {
         operator = item.innerHTML
-    })
-})
+        console.log(operator)
+    });
+});
 //operate function
 // once two numbers areinputed and produce a result, set num1 
 // equal to the result, and reset the operation
+const equalButton = document.querySelector('.result')
+equalButton.addEventListener('click', operate)
 function operate() {
-    console.log('test')
+    // first, convert num1 and num2 into numbers
+    // then check for operator type and run correct function
+    num1 = parseInt(num1);
+    num2 = parseInt(num2);
+
+    if (operator = '+') {
+        addition(num1, num2);
+    } else if (operator = '-') {
+        subtraction(num1, num2);
+    } else if (operator = '*') {
+        multiplication(num1, num2);
+    } else if (operator = '/') {
+        division(num1, num2);
+    } else if (operator = '') {
+        console.log(num1);
+    }
 }
 
 
@@ -53,7 +76,7 @@ const displayBox = document.querySelector('.display-box')
 
 // arithmatic functions
 function addition (num1, num2) {
-    return num1 + num2;
+    console.log(sum = num1 + num2);
 };
 
 function subtraction (num1, num2) {
@@ -67,7 +90,3 @@ function multiplication (num1, num2) {
 function division (num1, num2) {
     return num1 / num2;
 };
-console.log(division(4,2))
-console.log(addition(8,2))
-console.log(subtraction(50,43))
-console.log(multiplication(5,12))
