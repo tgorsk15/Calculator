@@ -15,6 +15,9 @@ let operator = ''
 const numberButtons = document.querySelectorAll('.number')
 numberButtons.forEach(number => {
     number.addEventListener('click', () => {
+        // put in another check to make sure 'result' isn't being
+        // used again if no operator was clicked after a calculation
+
         // put in a check to see if operator exists yet
         // if it does, set num2 up
         if (operator === '') {
@@ -59,9 +62,16 @@ function operate() {
     } else if (operator === '/') {
         division(num1, num2);
     } else if (operator === '') {
+
         console.log(num1);
-    }
-}
+    };
+    // reset
+    
+    num1 = result.toString();
+    num2 = '';
+    console.log(num1);
+    console.log(num2);
+};
 
 
 
@@ -77,17 +87,17 @@ const displayBox = document.querySelector('.display-box')
 
 // arithmatic functions
 function addition (num1, num2) {
-    console.log(sum = num1 + num2);
+    return result = num1 + num2;
 };
 
 function subtraction (num1, num2) {
-    console.log(num1 - num2);
+    return result = num1 - num2;
 };
 
 function multiplication (num1, num2) {
-    console.log(num1 * num2);
+    return result = num1 * num2;
 };
 
 function division (num1, num2) {
-    console.log(num1 / num2);
+    return result = num1 / num2;
 };
