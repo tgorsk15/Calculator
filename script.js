@@ -48,16 +48,17 @@ function operate() {
     // then check for operator type and run correct function
     num1 = parseInt(num1);
     num2 = parseInt(num2);
+    console.log(operator)
 
-    if (operator = '+') {
+    if (operator === '+') {
         addition(num1, num2);
-    } else if (operator = '-') {
+    } else if (operator === '-') {
         subtraction(num1, num2);
-    } else if (operator = '*') {
+    } else if (operator === 'X') {
         multiplication(num1, num2);
-    } else if (operator = '/') {
+    } else if (operator === '/') {
         division(num1, num2);
-    } else if (operator = '') {
+    } else if (operator === '') {
         console.log(num1);
     }
 }
@@ -80,13 +81,13 @@ function addition (num1, num2) {
 };
 
 function subtraction (num1, num2) {
-    return num1 - num2;
+    console.log(num1 - num2);
 };
 
 function multiplication (num1, num2) {
-    return num1 * num2;
+    console.log(num1 * num2);
 };
 
 function division (num1, num2) {
-    return num1 / num2;
+    console.log(num1 / num2);
 };
