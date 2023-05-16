@@ -17,7 +17,10 @@ numberButtons.forEach(number => {
     number.addEventListener('click', () => {
         // put in another check to make sure 'result' isn't being
         // used again if no operator was clicked after a calculation
-
+        // if (operator === '' && num1 !== '') {
+        //     num1 = '';
+        // };
+        
         // put in a check to see if operator exists yet
         // if it does, set num2 up
         if (operator === '') {
@@ -25,7 +28,7 @@ numberButtons.forEach(number => {
         }
         else {
             num2 += number.innerHTML;
-        }
+        };
 
         // IDEA: create a string, split the string at the operator,
         // set the variables to the correct pieces
@@ -37,8 +40,13 @@ numberButtons.forEach(number => {
 const operateButtons = document.querySelectorAll('.operate')
 operateButtons.forEach(item => {
     item.addEventListener('click', () => {
-        operator = item.innerHTML
-        console.log(operator)
+        console.log(operator);
+        // pressing another operator will calculate result and then
+        // continue to cycle through the operate() function
+        if (num1 !== '' && num2 !== '') {
+            operate();
+        };
+        operator = item.innerHTML;
     });
 });
 //operate function
@@ -69,8 +77,10 @@ function operate() {
     
     num1 = result.toString();
     num2 = '';
+    // operator = '';
     console.log(num1);
     console.log(num2);
+   
 };
 
 
