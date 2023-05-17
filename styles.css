@@ -16,7 +16,7 @@ body {
     width: 400px;
 }
 
-.display-box {
+#display-box {
     display: flex;
     justify-content: center;
     background-color: white;

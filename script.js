@@ -15,19 +15,15 @@ let operator = ''
 const numberButtons = document.querySelectorAll('.number')
 numberButtons.forEach(number => {
     number.addEventListener('click', () => {
-        // put in another check to make sure 'result' isn't being
-        // used again if no operator was clicked after a calculation
-        // if (operator === '' && num1 !== '') {
-        //     num1 = '';
-        // };
-        
         // put in a check to see if operator exists yet
         // if it does, set num2 up
         if (operator === '') {
             num1 += number.innerHTML;
+            displayBox.textContent = num1;
         }
         else {
             num2 += number.innerHTML;
+            displayBox.textContent = num2;
         };
 
         // IDEA: create a string, split the string at the operator,
@@ -40,13 +36,13 @@ numberButtons.forEach(number => {
 const operateButtons = document.querySelectorAll('.operate')
 operateButtons.forEach(item => {
     item.addEventListener('click', () => {
-        console.log(operator);
         // pressing another operator will calculate result and then
         // continue to cycle through the operate() function
         if (num1 !== '' && num2 !== '') {
             operate();
         };
         operator = item.innerHTML;
+        console.log(operator);
     });
 });
 //operate function
@@ -77,35 +73,33 @@ function operate() {
     
     num1 = result.toString();
     num2 = '';
-    // operator = '';
+    displayBox.textContent = num1;
     console.log(num1);
     console.log(num2);
    
 };
 
+// JS reference for display box
+let displayBox = document.getElementById('display-box');
 
-let displayBox = document.querySelector('.display-box')
+// function changeDisplay() {
+//     // displayBox.textContent = 'new'
+// }
+
 
 // clear button
 const clearButton = document.querySelector('.clear')
 clearButton.addEventListener('click', clear)
 
 function clear() {
-    displayBox = ''
     num1 = '';
     num2 = '';
     operator = '';
+    displayBox.textContent = '0'
+    console.log('clear')
 };
 
 
-
-// JS reference for display box
-// function digitPress(digit) {
-//     displayBox.value = digit;
-// };
-// console.log(digitPress(4));
-// const test = document.getElementById(v7).value;
-// console.log(test);
 
 
 // arithmatic functions
