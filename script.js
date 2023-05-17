@@ -53,9 +53,9 @@ equalButton.addEventListener('click', operate)
 function operate() {
     // first, convert num1 and num2 into numbers
     // then check for operator type and run correct function
-    num1 = parseInt(num1);
-    num2 = parseInt(num2);
-    console.log(operator)
+    num1 = parseFloat(num1);
+    num2 = parseFloat(num2);
+    console.log(operator);
 
     if (operator === '+') {
         addition(num1, num2);
@@ -66,8 +66,9 @@ function operate() {
     } else if (operator === '/') {
         division(num1, num2);
     } else if (operator === '') {
-
+        num1 = 0;
         console.log(num1);
+        // use break or continue??
     };
     // reset
     
@@ -75,7 +76,6 @@ function operate() {
     num2 = '';
     displayBox.textContent = num1;
     console.log(num1);
-    console.log(num2);
    
 };
 
@@ -98,6 +98,31 @@ function clear() {
     displayBox.textContent = '0'
     console.log('clear')
 };
+
+// decimal button
+const decimalButton = document.querySelector('.decimal')
+decimalButton.addEventListener('click', () => {
+    if (num1 === '' && operator === '') {
+        num1 += decimalButton.innerHTML;
+        console.log(num1);
+    } else if (num1 !== '' && operator === '') {
+        num1 += decimalButton.innerHTML;
+        console.log(num1);
+    } else if (operator !== '') {
+        num2 += decimalButton.innerHTML;
+        console.log(num2);
+    };
+})
+
+// function addDecimal() {
+//     // if (num1 === '' && operator === '') {
+//     //     num1 += decimalButton.innerHTML;
+//     //     console.log(num1);
+//     // } else if (operator !== 0) {
+//     //     num2 += decimalButton.innerHTML;
+//     //     console.log(num2);
+//     // };
+// };
 
 
 
