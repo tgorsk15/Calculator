@@ -84,9 +84,22 @@ function operate() {
 };
 
 
+let displayBox = document.querySelector('.display-box')
+
+// clear button
+const clearButton = document.querySelector('.clear')
+clearButton.addEventListener('click', clear)
+
+function clear() {
+    displayBox = ''
+    num1 = '';
+    num2 = '';
+    operator = '';
+};
+
+
 
 // JS reference for display box
-const displayBox = document.querySelector('.display-box')
 // function digitPress(digit) {
 //     displayBox.value = digit;
 // };
