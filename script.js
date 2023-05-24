@@ -49,7 +49,11 @@ operateButtons.forEach(item => {
 // once two numbers areinputed and produce a result, set num1 
 // equal to the result, and reset the operation
 const equalButton = document.querySelector('.result')
-equalButton.addEventListener('click', operate)
+equalButton.addEventListener('click', () => {
+    if (num1 !== '' && num2 !== '' && operator !== ''){
+        operate();
+    }
+})
 function operate() {
     // first, convert num1 and num2 into numbers
     // then check for operator type and run correct function
@@ -65,11 +69,11 @@ function operate() {
         multiplication(num1, num2);
     } else if (operator === '/') {
         division(num1, num2);
-    } else if (operator === '') {
-        num1 = 0;
-        console.log(num1);
-        // use break or continue??
-    };
+    }
+    // else if (operator === '' && num1 === 0) {
+    //     return displayBox.textContent = '0'
+        
+    // };
     // reset
     
     num1 = result.toString();
@@ -97,6 +101,8 @@ function clear() {
     operator = '';
     displayBox.textContent = '0'
     console.log('clear')
+    console.log(num1);
+    console.log(num2);
 };
 
 // decimal button
