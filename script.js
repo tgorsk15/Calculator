@@ -6,9 +6,11 @@
 //     num2: 0,
 // };
 
-let num1 = ''
-let num2 = ''
-let operator = ''
+let num1 = '';
+let num2 = '';
+let operator = '';
+
+// let equalsClicked = false;
 
 
 
@@ -17,6 +19,18 @@ numberButtons.forEach(number => {
     number.addEventListener('click', () => {
         // put in a check to see if operator exists yet
         // if it does, set num2 up
+        // test:
+        // if (equalsClicked = true) {
+        //     numberButtons.forEach(number => {
+        //         number.addEventListener('click', function () {
+        //             num1 = '';
+        //             operator = '';
+        //             equalsClicked = false;
+        //         }); 
+        //     })
+            
+        // };
+
         if (operator === '') {
             num1 += number.innerHTML;
             displayBox.textContent = num1;
@@ -52,8 +66,13 @@ const equalButton = document.querySelector('.result')
 equalButton.addEventListener('click', () => {
     if (num1 !== '' && num2 !== '' && operator !== ''){
         operate();
+        // equalsClicked = true;
+
+        // complete the reset:
+        // num1 = '';
+        // operator = '';
     }
-})
+});
 function operate() {
     // first, convert num1 and num2 into numbers
     // then check for operator type and run correct function
@@ -69,13 +88,9 @@ function operate() {
         multiplication(num1, num2);
     } else if (operator === '/') {
         division(num1, num2);
-    }
-    // else if (operator === '' && num1 === 0) {
-    //     return displayBox.textContent = '0'
-        
-    // };
+    };
+
     // reset
-    
     num1 = result.toString();
     num2 = '';
     displayBox.textContent = num1;
@@ -120,17 +135,8 @@ decimalButton.addEventListener('click', () => {
     };
 })
 
-// function addDecimal() {
-//     // if (num1 === '' && operator === '') {
-//     //     num1 += decimalButton.innerHTML;
-//     //     console.log(num1);
-//     // } else if (operator !== 0) {
-//     //     num2 += decimalButton.innerHTML;
-//     //     console.log(num2);
-//     // };
-// };
 
-
+// backspace button
 
 
 // arithmatic functions
