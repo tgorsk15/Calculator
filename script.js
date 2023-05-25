@@ -10,7 +10,7 @@ let num1 = '';
 let num2 = '';
 let operator = '';
 
-// let equalsClicked = false;
+let equalsClicked = false;
 
 
 
@@ -29,6 +29,13 @@ numberButtons.forEach(number => {
         //         }); 
         //     })
             
+        // };
+        // **************
+        // console.log(equalsClicked)
+        // if (equalsClicked = true) {
+        //     num1 = '';
+        //     operator = '';
+        //     equalsClicked = false;
         // };
 
         if (operator === '') {
@@ -50,6 +57,7 @@ numberButtons.forEach(number => {
 const operateButtons = document.querySelectorAll('.operate')
 operateButtons.forEach(item => {
     item.addEventListener('click', () => {
+        // equalsClicked = false;
         // pressing another operator will calculate result and then
         // continue to cycle through the operate() function
         if (num1 !== '' && num2 !== '') {
@@ -64,9 +72,9 @@ operateButtons.forEach(item => {
 // equal to the result, and reset the operation
 const equalButton = document.querySelector('.result')
 equalButton.addEventListener('click', () => {
+    // equalsClicked = true;
     if (num1 !== '' && num2 !== '' && operator !== ''){
         operate();
-        // equalsClicked = true;
 
         // complete the reset:
         // num1 = '';
@@ -125,6 +133,8 @@ const decimalButton = document.querySelector('.decimal')
 decimalButton.addEventListener('click', () => {
     if (num1 === '' && operator === '') {
         num1 += decimalButton.innerHTML;
+        // issue with no decimal being shown in displaybox:
+        // displayBox.textContent += decimalButton.innerHTML;
         console.log(num1);
     } else if (num1 !== '' && operator === '') {
         num1 += decimalButton.innerHTML;
@@ -137,7 +147,19 @@ decimalButton.addEventListener('click', () => {
 
 
 // backspace button
+const backButton = document.querySelector('.delete')
+backButton.addEventListener('click', () => {
+// need to add in displaybox
+    if (num1 !== '' && num2 === '') {
+        num1 = num1.substring(0, num1.length - 1)
+        console.log(num1)
+    } else if (num1 !== '' && num2 !== '') {
+        num2 = num2.substring(0, num2.length -1)
+        console.log(num2);
+    } else {
 
+    }
+});
 
 // arithmatic functions
 function addition (num1, num2) {
