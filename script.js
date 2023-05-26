@@ -10,7 +10,7 @@ let num1 = '';
 let num2 = '';
 let operator = '';
 
-let equalsClicked = false;
+equalsClicked = false;
 
 
 
@@ -31,12 +31,11 @@ numberButtons.forEach(number => {
             
         // };
         // **************
-        // console.log(equalsClicked)
-        // if (equalsClicked = true) {
-        //     num1 = '';
-        //     operator = '';
-        //     equalsClicked = false;
-        // };
+        if (equalsClicked === true) {
+            clear();
+        };
+        equalsClicked === false;
+        console.log(equalsClicked)
 
         if (operator === '') {
             num1 += number.innerHTML;
@@ -57,7 +56,7 @@ numberButtons.forEach(number => {
 const operateButtons = document.querySelectorAll('.operate')
 operateButtons.forEach(item => {
     item.addEventListener('click', () => {
-        // equalsClicked = false;
+        // equalsClicked == false;
         // pressing another operator will calculate result and then
         // continue to cycle through the operate() function
         if (num1 !== '' && num2 !== '') {
@@ -72,10 +71,10 @@ operateButtons.forEach(item => {
 // equal to the result, and reset the operation
 const equalButton = document.querySelector('.result')
 equalButton.addEventListener('click', () => {
-    // equalsClicked = true;
     if (num1 !== '' && num2 !== '' && operator !== ''){
         operate();
-
+        equalsClicked === true;
+        console.log(equalsClicked);
         // complete the reset:
         // num1 = '';
         // operator = '';
@@ -108,10 +107,6 @@ function operate() {
 
 // JS reference for display box
 let displayBox = document.getElementById('display-box');
-
-// function changeDisplay() {
-//     // displayBox.textContent = 'new'
-// }
 
 
 // clear button
