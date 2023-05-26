@@ -138,9 +138,11 @@ decimalButton.addEventListener('click', () => {
         console.log(num1);
     } else if (num1 !== '' && operator === '') {
         num1 += decimalButton.innerHTML;
+        displayBox.textContent = num1;
         console.log(num1);
     } else if (operator !== '') {
         num2 += decimalButton.innerHTML;
+        displayBox.textContent = num2;
         console.log(num2);
     };
 })
@@ -152,12 +154,14 @@ backButton.addEventListener('click', () => {
 // need to add in displaybox
     if (num1 !== '' && num2 === '') {
         num1 = num1.substring(0, num1.length - 1)
+        displayBox.textContent = num1;
         console.log(num1)
     } else if (num1 !== '' && num2 !== '') {
         num2 = num2.substring(0, num2.length -1)
+        displayBox.textContent = num2;
         console.log(num2);
     } else {
-
+        displayBox.textContent = '0'
     }
 });
 
