@@ -10,31 +10,19 @@ let num1 = '';
 let num2 = '';
 let operator = '';
 
-equalsClicked = false;
+let equalsClicked = false;
 
 
 
 const numberButtons = document.querySelectorAll('.number')
 numberButtons.forEach(number => {
     number.addEventListener('click', () => {
-        // put in a check to see if operator exists yet
-        // if it does, set num2 up
-        // test:
-        // if (equalsClicked = true) {
-        //     numberButtons.forEach(number => {
-        //         number.addEventListener('click', function () {
-        //             num1 = '';
-        //             operator = '';
-        //             equalsClicked = false;
-        //         }); 
-        //     })
-            
-        // };
+        
         // **************
         if (equalsClicked === true) {
             clear();
         };
-        equalsClicked === false;
+        equalsClicked = false;
         console.log(equalsClicked)
 
         if (operator === '') {
@@ -56,7 +44,8 @@ numberButtons.forEach(number => {
 const operateButtons = document.querySelectorAll('.operate')
 operateButtons.forEach(item => {
     item.addEventListener('click', () => {
-        // equalsClicked == false;
+        equalsClicked = false;
+        console.log(equalsClicked);
         // pressing another operator will calculate result and then
         // continue to cycle through the operate() function
         if (num1 !== '' && num2 !== '') {
@@ -66,6 +55,8 @@ operateButtons.forEach(item => {
         console.log(operator);
     });
 });
+
+
 //operate function
 // once two numbers areinputed and produce a result, set num1 
 // equal to the result, and reset the operation
@@ -73,13 +64,14 @@ const equalButton = document.querySelector('.result')
 equalButton.addEventListener('click', () => {
     if (num1 !== '' && num2 !== '' && operator !== ''){
         operate();
-        equalsClicked === true;
+        equalsClicked = true;
         console.log(equalsClicked);
         // complete the reset:
         // num1 = '';
         // operator = '';
     }
 });
+
 function operate() {
     // first, convert num1 and num2 into numbers
     // then check for operator type and run correct function
