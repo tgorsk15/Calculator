@@ -1,6 +1,6 @@
 /* style sheet for calculator */
 body {
-    background-color: rgb(192, 180, 215);
+    background-color: rgb(143, 201, 228); 
 }
 
 .container {
@@ -18,33 +18,45 @@ body {
     justify-content: space-around;
     padding-top: 10px;
     padding-bottom: 10px;
-    height: 500px;
+    height: 465px;
     width: 400px; 
+    background-color: cornflowerblue;
     border: 2px solid rgb(25, 66, 78);
+    border-bottom-left-radius: 5%;
+    border-bottom-right-radius: 5%;
 }
 
 #display-box {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(131, 130, 130);
+    background-color: rgb(250, 193, 86);
     width: 400px;
     height: 60px;
-    border: 2px solid rgb(25, 66, 78)
+    border: 2px solid rgb(25, 66, 78);
+    /*box-shadow: 1 1 1px rgb(174, 51, 51); */
+    border-top-right-radius: 10%;
+    border-top-left-radius: 10%;
+    font-size: 50px;
+    font-family: "Roboto";
+    color: rgb(63, 62, 62);
 }
 
 button {
     aspect-ratio: 1;
     justify-content: space-between;
-    padding: 35px;
+    border: 1px solid orange;
+    border-radius: 10%;
+    padding: 28px;
     width: 100%;
-    margin-left: 2px;
-    margin-right: 2px; 
+    margin-left: 3px;
+    margin-right: 3px;
+    font-size: larger; 
 }
 
 .row1, .row2, .row3, .row4, .row5 {
     display: flex;
-    margin-left: 15px;
-    margin-right: 15px;
+    margin-left: 11px;
+    margin-right: 11px;
     justify-content: space-between;
 }
