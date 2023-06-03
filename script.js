@@ -52,6 +52,9 @@ operateButtons.forEach(item => {
             operate();
         };
         operator = item.innerHTML;
+        if (num1 === '' && num2 === '') {
+            operator = '';
+        };
         console.log(operator);
     });
 });
