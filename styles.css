@@ -1,6 +1,8 @@
 /* style sheet for calculator */
 body {
-    background-color: rgb(143, 201, 228); 
+    background-color: rgb(143, 201, 228);
+    display: flex;
+    justify-content: center; 
 }
 
 .container {
@@ -9,7 +11,12 @@ body {
     align-items: center; 
     flex-direction: column;
     margin-top: 135px;
-   
+    border-bottom: 3px solid black;
+    border-bottom-left-radius: 5%;
+    border-bottom-right-radius: 5%;
+    border-top-right-radius: 3%;
+    border-top-left-radius: 3%;
+    width: 400px;
 }
 
 .button-panel {
@@ -21,37 +28,39 @@ body {
     height: 465px;
     width: 400px; 
     background-color: cornflowerblue;
-    border: 2px solid rgb(25, 66, 78);
+    border: 2.5px solid rgb(25, 66, 78);
     border-bottom-left-radius: 5%;
     border-bottom-right-radius: 5%;
 }
 
 #display-box {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
+    padding: 10px;
     align-items: center;
-    background-color: rgb(250, 193, 86);
-    width: 400px;
+    background-color: lightgrey;
+    width: 374px;
     height: 60px;
-    border: 2px solid rgb(25, 66, 78);
-    /*box-shadow: 1 1 1px rgb(174, 51, 51); */
-    border-top-right-radius: 10%;
-    border-top-left-radius: 10%;
+    border: 5px solid rgb(25, 66, 78);
+    border-top-right-radius: 8%;
+    border-top-left-radius: 8%;
     font-size: 50px;
     font-family: "Roboto";
+    font-weight: 500; 
     color: rgb(63, 62, 62);
 }
 
 button {
     aspect-ratio: 1;
     justify-content: space-between;
-    border: 1px solid orange;
+    border: 1px solid black;
     border-radius: 10%;
     padding: 28px;
     width: 100%;
     margin-left: 3px;
     margin-right: 3px;
-    font-size: larger; 
+    font-size: larger;
+    font-weight: 400; 
 }
 
 .row1, .row2, .row3, .row4, .row5 {
@@ -59,4 +68,16 @@ button {
     margin-left: 11px;
     margin-right: 11px;
     justify-content: space-between;
+}
+
+.operate {
+    background-color: rgb(245, 189, 84);
+}
+
+.result, .delete, .other {
+    background-color: rgb(194, 72, 72);
+}
+
+.number, .clear, .decimal {
+    background-color: rgb(119, 182, 119);
 }

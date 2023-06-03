@@ -69,9 +69,6 @@ equalButton.addEventListener('click', () => {
         operate();
         equalsClicked = true;
         console.log(equalsClicked);
-        // complete the reset:
-        // num1 = '';
-        // operator = '';
     }
 });
 
