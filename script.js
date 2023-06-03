@@ -12,6 +12,8 @@ let operator = '';
 
 let equalsClicked = false;
 
+// ********
+// need to fix issue of keeping the number contained in displaybox
 
 
 const numberButtons = document.querySelectorAll('.number')
@@ -118,10 +120,14 @@ function clear() {
 // decimal button
 const decimalButton = document.querySelector('.decimal')
 decimalButton.addEventListener('click', () => {
+    if (equalsClicked === true) {
+        clear();
+    };
+    equalsClicked = false;
     if (num1 === '' && operator === '') {
         num1 += decimalButton.innerHTML;
         // issue with no decimal being shown in displaybox:
-        // displayBox.textContent += decimalButton.innerHTML;
+        displayBox.textContent += num1;
         console.log(num1);
     } else if (num1 !== '' && operator === '') {
         num1 += decimalButton.innerHTML;
@@ -132,7 +138,7 @@ decimalButton.addEventListener('click', () => {
         displayBox.textContent = num2;
         console.log(num2);
     };
-})
+});
 
 
 // backspace button
