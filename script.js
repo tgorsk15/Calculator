@@ -1,16 +1,12 @@
-// create an object that will account for the currentvalue, operator, 
-//and additional value
-// let numStorage = {
-//     num1: 0,
-//     operator: '',
-//     num2: 0,
-// };
+
 
 let num1 = '';
 let num2 = '';
 let operator = '';
 
 let equalsClicked = false;
+let decimalCLicked = false;
+
 
 // ********
 // need to fix issue of keeping the number contained in displaybox
@@ -25,16 +21,25 @@ numberButtons.forEach(number => {
             clear();
         };
         equalsClicked = false;
-        console.log(equalsClicked)
+        console.log(equalsClicked);
 
         if (operator === '') {
+            if (num1.includes('.')) {
+                decimalButton.disabled = true;
+                console.log(decimalButton);
+            }
             num1 += number.innerHTML;
             displayBox.textContent = num1;
-        }
-        else {
+        };
+        if (operator !== '') {
+            decimalButton.disabled = false;
+            if (num2.includes('.')) {
+                decimalButton.disabled = true;
+            }
             num2 += number.innerHTML;
             displayBox.textContent = num2;
         };
+        
 
         // IDEA: create a string, split the string at the operator,
         // set the variables to the correct pieces
@@ -47,6 +52,7 @@ const operateButtons = document.querySelectorAll('.operate')
 operateButtons.forEach(item => {
     item.addEventListener('click', () => {
         equalsClicked = false;
+        decimalButton.disabled = false;
         console.log(equalsClicked);
         // pressing another operator will calculate result and then
         // continue to cycle through the operate() function
@@ -69,6 +75,7 @@ const equalButton = document.querySelector('.result')
 equalButton.addEventListener('click', () => {
     if (num1 !== '' && num2 !== '' && operator !== ''){
         operate();
+        decimalButton.disabled = false;
         equalsClicked = true;
         console.log(equalsClicked);
     }
@@ -111,8 +118,9 @@ function clear() {
     num1 = '';
     num2 = '';
     operator = '';
-    displayBox.textContent = '0'
-    console.log('clear')
+    displayBox.textContent = '0';
+    decimalButton.disabled = false;
+    console.log('clear');
     console.log(num1);
     console.log(num2);
 };
@@ -126,7 +134,6 @@ decimalButton.addEventListener('click', () => {
     equalsClicked = false;
     if (num1 === '' && operator === '') {
         num1 += decimalButton.innerHTML;
-        // issue with no decimal being shown in displaybox:
         displayBox.textContent += num1;
         console.log(num1);
     } else if (num1 !== '' && operator === '') {
@@ -138,6 +145,7 @@ decimalButton.addEventListener('click', () => {
         displayBox.textContent = num2;
         console.log(num2);
     };
+    decimalButton.disabled = true;
 });
 
 
