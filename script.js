@@ -7,6 +7,8 @@ let operator = '';
 let equalsClicked = false;
 let decimalCLicked = false;
 
+let maxDigit = 13;
+
 
 // ********
 // need to fix issue of keeping the number contained in displaybox
@@ -69,7 +71,7 @@ operateButtons.forEach(item => {
 
 
 //operate function
-// once two numbers areinputed and produce a result, set num1 
+// once two numbers are inputed and produce a result, set num1 
 // equal to the result, and reset the operation
 const equalButton = document.querySelector('.result')
 equalButton.addEventListener('click', () => {
@@ -99,7 +101,9 @@ function operate() {
     };
 
     // reset
-    num1 = result.toString();
+    num1 = result;
+    num1 = num1.toString();
+    checkDigit();
     num2 = '';
     displayBox.textContent = num1;
     console.log(num1);
@@ -123,6 +127,18 @@ function clear() {
     console.log('clear');
     console.log(num1);
     console.log(num2);
+};
+
+// limit digit number
+function checkDigit() {
+    if (num1.length > maxDigit) {
+        // *** length does not work with numbers
+        // going to have to slice a string and use that
+        num1 = num1.substring(0, 13);
+        num1 += '...'
+        console.log(num1);
+        return num1
+    };
 };
 
 // decimal button
