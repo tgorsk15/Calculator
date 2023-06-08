@@ -25,21 +25,25 @@ numberButtons.forEach(number => {
         equalsClicked = false;
         console.log(equalsClicked);
 
+        // num1
         if (operator === '') {
-            if (num1.includes('.')) {
-                decimalButton.disabled = true;
-                console.log(decimalButton);
-            }
-            num1 += number.innerHTML;
+            if (num1.length === maxDigit) {
+                num1 += ''
+            } else {
+                num1 += number.innerHTML;
+            };
             displayBox.textContent = num1;
         };
+
+        // num2
         if (operator !== '') {
             decimalButton.disabled = false;
-            if (num2.includes('.')) {
-                decimalButton.disabled = true;
-            }
-            num2 += number.innerHTML;
-            displayBox.textContent = num2;
+            if (num2.length === maxDigit) {
+                num2 += ''
+            } else {
+                num2 += number.innerHTML;
+            };
+            displayBox.textContent = num2
         };
         
 
@@ -102,12 +106,12 @@ function operate() {
 
     // reset
     num1 = result;
+    console.log(num1);
     num1 = num1.toString();
+    console.log(num1);
     checkDigit();
     num2 = '';
     displayBox.textContent = num1;
-    console.log(num1);
-   
 };
 
 // JS reference for display box
@@ -135,7 +139,7 @@ function checkDigit() {
         // *** length does not work with numbers
         // going to have to slice a string and use that
         num1 = num1.substring(0, 13);
-        num1 += '...'
+        num1 += '..'
         console.log(num1);
         return num1
     };
@@ -178,7 +182,7 @@ backButton.addEventListener('click', () => {
         displayBox.textContent = num2;
         console.log(num2);
     } else {
-        displayBox.textContent = '0'
+        displayBox.textContent = '0';
     }
 });
 
