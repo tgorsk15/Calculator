@@ -65,6 +65,10 @@ button {
     font-weight: 400; 
 }
 
+button:hover {
+    background-color: transparent;
+}
+
 .row1, .row2, .row3, .row4, .row5 {
     display: flex;
     margin-left: 11px;
