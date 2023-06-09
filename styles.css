@@ -1,6 +1,7 @@
 /* style sheet for calculator */
 body {
     background-color: rgb(143, 201, 228);
+    background-image: url(background-pic);
     display: flex;
     justify-content: center;
 }
@@ -16,6 +17,7 @@ body {
     border-bottom-right-radius: 5%;
     border-top-right-radius: 3%;
     border-top-left-radius: 3%;
+    box-shadow: 0px -5px 40px 0px black;
     width: 400px;
 }
 
